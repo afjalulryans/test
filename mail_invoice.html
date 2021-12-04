@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+        }
+
+        .invoice {
+            position: relative;
+            background: #fff;
+            border: 1px solid #dddddd;
+            padding: 20px;
+            margin: 10px 25px;
+        }
+
+        .page-header {
+            padding-bottom: 9px;
+            margin: 40px 0 20px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .col-sm-4 {
+            float: left;
+        }
+
+        address {
+            margin-bottom: 20px;
+            font-style: normal;
+            line-height: 1.42857143;
+        }
+
+        .col-sm-4 {
+            width: 33.33333333%;
+        }
+
+        .col-xs-12 {
+            width: 100%;
+        }
+
+        .col-xs-12 {
+            float: left;
+        }
+
+        .col-sm-4, .col-xs-12, .col-xs-6 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        table {
+            background-color: transparent;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .table-striped > tbody > tr:nth-of-type(2n+1) {
+            background-color: #f9f9f9;
+        }
+
+        .col-xs-12, .col-xs-6 {
+            float: left;
+        }
+
+        .lead {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .table-wrapper {
+            width: 650px;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            /* border-top: 1px solid #dddddd; */
+        }
+
+        th {
+            text-align: left;
+        }
+
+        td, th {
+            padding: 0;
+        }
+
+        /* td {
+            border: 1px solid #dddddd;
+        } */
+
+@media print {
+      a[href]:after {
+        content: none !important;
+      }
+
+      .no-print, .no-print * { display: none !important; }
+
+      .company_name_provider{
+        margin-left: 20% !important;
+      }
+
+      .no_print{
+        display: none !important;
+      }
+
+      *{
+        font-size: 10px;
+      }
+    }
+    .address p{
+        margin: 0px;
+    }
+
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div style="background:#f6f6f6;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:12px;margin:0;padding: 15px 0;">
+
+
+
+
+
+
+<div class="table-wrapper">
+
+<table class="table" width="90%" align="center" border="0" cellspacing="2" cellpadding="2" style="font-family:Calibri;font-size:12px;">
+    <tr>
+        <td>
+            <table width="100%" border="0" cellspacing="2" cellpadding="2">
+                <tr>
+
+                    <td width="33%" align="left" valign="top">
+                        <img src="https://www.ryansbooks.com/images/Ryansbooks logo_BnW_Horizontal.png" width="180"/><br>
+                    </td>
+                    <td width="33%" align="center"></td>
+                    <td width="33%" align="right">
+                        <table width="50%" border="0" cellspacing="2" cellpadding="2">
+                            <tr valign="top">
+                                <td width="15%" style="border:1px solid #444444;"><b>Order No.</b>&nbsp;</td>
+                            </tr>
+                            <tr valign="top">
+                                <td style="border:1px solid #444444;"><b>Placed On.</b>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="border-bottom:1px dashed #666666; padding-top:50px">
+            Mr/Mrs.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" border="0" cellspacing="2" cellpadding="2">
+                <tr>
+
+                    <td width="50%" style="border-bottom:1px dashed #666666;padding-top:20px">
+                        Address.
+                    </td>
+                    <td width="25%" style="border-bottom:1px dashed #666666;padding-top:20px">
+                        Tel.
+                    </td>
+                    <td width="25%" style="border-bottom:1px dashed #666666;padding-top:20px">
+                        Email.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="padding-top:30px">
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                <tr>
+                    <td colspan="5" style="border:1px solid #444444; border-bottom:0px; background-color: #BDBDBD; -webkit-print-color-adjust: exact;; font-size: 1rem"><b>Ordered Product Summery</b></td>
+                </tr>
+                <tr align="center">
+                    <td align="center" width="5%" style="border:1px solid #444444;border-right:0px;"><b>Sl.</b></td>
+                    <td align="center" width="35%" style="border:1px solid #444444;border-right:0px; padding-left: 5px;"><b>Book Name</b></td>
+                    <td align="center" width="10%" style="border:1px solid #444444;border-right:0px;"><b>Qnty.</b></td>
+                    <td align="right" width="10%" style="border:1px solid #444444;border-right:0px; padding-right: 5px;"><b>Price</b></td>
+                    <td align="right" width="10%" style="border:1px solid #444444; padding-right: 5px;"><b>Total</b></td>
+                </tr>
+                <tr>
+                    <td align="center" style="border-left:1px solid #444444;border-bottom:1px solid #444444;"></td>
+                    <td align="left" style="border-left:1px solid #444444;border-bottom:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="left" style="border-left:1px solid #444444;border-bottom:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="left" width="15%" style="border:1px solid #444444; border-right:0px; border-top: 0px;  word-break: break-word;"></td>
+                    <td align="center" style="border-left:1px solid #444444;border-bottom:1px solid #444444;border-right:1px solid #444444;"></td>
+                </tr>
+                <tr>
+                    <td align="center" style="border-left:1px solid #444444;"></td>
+                    <td align="left" style="border-left:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="left" style="border-left:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="right" style="border-left:1px solid #444444;border-bottom:1px solid #444444; padding-right: 5px;"><b>Total</b></td>
+                    <td align="right" style="border-left:1px solid #444444;border-bottom:1px solid #444444;border-right:1px solid #444444; padding-right: 5px;"></td>
+                </tr>
+                <tr>
+                    <td align="center" style="border-left:1px solid #444444;"></td>
+                    <td align="left" style="border-left:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="left" style="border-left:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="right" style="border-left:1px solid #444444;border-bottom:1px solid #444444; padding-right: 5px;"><b>Shipping Cost</b></td>
+                    <td align="right" style="border-left:1px solid #444444;border-bottom:1px solid #444444;border-right:1px solid #444444; padding-right: 5px;"></td>
+                </tr>
+                <tr>
+                    <td align="center" style="border-left:1px solid #444444;border-bottom:1px solid #444444;"></td>
+                    <td align="left" style="border-left:1px solid #444444;border-bottom:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="left" style="border-left:1px solid #444444;border-bottom:1px solid #444444; padding-left: 5px;"></td>
+                    <td align="right" style="border-left:1px solid #444444;border-bottom:1px solid #444444; padding-right: 5px;"><b>Grand Total</b></td>
+                    <td align="right" style="border-left:1px solid #444444;border-bottom:1px solid #444444;border-right:1px solid #444444; padding-right: 5px;"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr >
+        <td style="padding-top: 20px">
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                <tr>
+                    <td width="47%" align="left" style="border:1px solid #444444; -webkit-print-color-adjust: exact; padding:0">
+                        <p style="background-color: #BDBDBD; font-size: 1rem; margin:0"><b>Billing Information</b></p>
+                        <p style="height: 80px"></p>
+                    </td>
+                    <td width="6%" align="center"></td>
+                    <td width="47%" align="left" style="border:1px solid #444444; -webkit-print-color-adjust: exact; padding:0">
+                        <p style="background-color: #BDBDBD; font-size: 1rem; margin:0"><b>Delivery Information</b></p>
+                        <p style="height: 80px"></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr >
+        <td style="padding-top: 20px">
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                <tr>
+                    <td width="47%" align="left" style="border:1px solid #444444; -webkit-print-color-adjust: exact; padding:0">
+                        <p style="background-color: #BDBDBD; font-size: 1rem; margin:0"><b>Payment Method</b></p>
+                        <p style="height: 80px"></p>
+                    </td>
+                    <td width="6%" align="center"></td>
+                    <td style="padding-top:0px" valign="top">
+                        <p style="border-bottom:1px dashed #666666;"><b>Amount in words:</b></p>
+                        <p style="border-bottom:1px dashed #666666; padding-top: 10px"></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="padding-top: 20px">
+            <table width="100%" border="0" cellspacing="2" cellpadding="2">
+                <tr>
+
+                    <td width="40%" align="right">
+                        <h4>ryansbooks.com</h4>
+                    </td>
+                    <td width="20%" align="center"><h4>096 3844 2233</h4></td>
+                    <td width="40%" align="left">
+                        <h4>info@ryansbooks.com</h4>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: #ccc; -webkit-print-color-adjust: exact; ">
+            <table width="100%" border="0" cellspacing="2" cellpadding="2">
+                <tr>
+
+                    <td width="10%" align="left">
+                    </td>
+                    <td width="80%" align="center"><h4>Ryans Books. Kusholi Bhaban, 4th Floor, 238/1 Begum Rokeya Sharani, Agargaon, Dhaka-1207</h4></td>
+                    <td width="10%" align="right">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+
+</table>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--   <div class="table-wrapper">
+        <table class="table" bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" style="margin: 15px auto">
+            <tbody>
+            <tr>
+                <td valign="top" style="border: none;">
+                    <p style="font-size:18px;font-weight:normal;line-height:18px;margin:0 0 11px 0;color:#000000">
+                        Dear  </p>
+                    <p style="font-size:12px;line-height:16px;margin:0;color:#000000"> Thank You for your order.</p>
+                    <br>
+                    <p style="font-size:12px;line-height:16px;margin:0;color:#000000"> Your order is now under
+                        process.</p>
+                    <p style="margin:0;">If you require any information, Please feel free to contact us.</p>
+                    <br>
+                    <p style="margin:0;">Best Regards </p>
+                    <p style="margin:0;">Ryans Ecom Team<br> Telephone: 09604442121, 01755662121</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <h2>Summary</h2>
+                    <h3 style="font-size:18px;font-weight:normal;margin: 0 0 15px 0;">Your Order
+                        #10001
+                        <span> placed on 466646</span></h3>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <table cellspacing="0" cellpadding="0" border="0" class="table"
+                           style="margin-bottom: 0 !important;">
+                        <thead>
+                        <tr>
+                            <th colspan="4" bgcolor="#8dc63f" style="font-size:15px;padding:3px 9px">Ordered Product
+                                Summery
+                            </th>
+                        </tr>
+                        <tr>
+                            <th align="left" bgcolor="#EAEAEA" style="font-size:13px;padding:3px 9px;width:50%">Item
+                            </th>
+                            <th align="left" bgcolor="#EAEAEA" style="font-size:13px;padding:3px 9px">Product ID</th>
+                            <th align="center" bgcolor="#EAEAEA" style="font-size:13px;padding:3px 9px">Qty</th>
+                            <th align="right" bgcolor="#EAEAEA"
+                                style="font-size:13px;padding:3px 9px;text-align: right;">Subtotal
+                            </th>
+                        </tr>
+                        </thead>
+                            <tbody>
+                            <tr>
+                                <td align="left" valign="top"
+                                    style="font-size:11px;padding:3px 9px;border-bottom:1px dotted #dddddd"><strong
+                                            style="font-size:11px">product_name</strong>
+                                    
+                                        <div style="color: red;font-size: 10px;">test</div>
+                                    
+                                </td>
+                                <td align="left" valign="top"
+                                    style="font-size:11px;padding:3px 9px;border-bottom:1px dotted #dddddd">5758758</td>
+                                <td align="center" valign="top"
+                                    style="font-size:11px;padding:3px 9px;border-bottom:1px dotted #dddddd">6</td>
+                                <td align="right" valign="top"
+                                    style="font-size:11px;padding:3px 9px;border-bottom:1px dotted #dddddd"><span
+                                            class="m_-5910052104975220098m_-1298699314059124120price">TK
+                                        &nbsp; 7000</span></td>
+                            </tr>
+                            <tr class="m_-5910052104975220098m_-1298699314059124120subtotal">
+                                <td colspan="3" align="right" style="padding:3px 9px">Subtotal</td>
+                                <td align="right" style="padding:3px 9px"><span
+                                            class="m_-5910052104975220098m_-1298699314059124120price">TK
+                                        &nbsp;600</span></td>
+                            </tr>
+                            <tr class="m_-5910052104975220098m_-1298699314059124120shipping">
+                                <td colspan="3" align="right" style="padding:3px 9px">Shipping &amp; Handling</td>
+                                <td align="right" style="padding:3px 9px"><span
+                                            class="m_-5910052104975220098m_-1298699314059124120price">Tk. 
+                                        &nbsp; 2000</span></td>
+                            </tr>
+
+                                <tr class="m_-5910052104975220098m_-1298699314059124120shipping">
+                                    <td colspan="3" align="right" style="padding:3px 9px">Point Used</td>
+                                    <td align="right" style="padding:3px 9px"><span
+                                                class="m_-5910052104975220098m_-1298699314059124120price">TK
+                                            &nbsp; 400</span></td>
+                                </tr>
+                                <tr class="m_-5910052104975220098m_-1298699314059124120shipping">
+                                    <td colspan="3" align="right" style="padding:3px 9px">discount (online purchase only)</td>
+                                    <td align="right" style="padding:3px 9px"><span
+                                                class="m_-5910052104975220098m_-1298699314059124120price">TK
+                                            &nbsp;600</span></td>
+                                </tr>
+
+                            <tr class="m_-5910052104975220098m_-1298699314059124120grand_total">
+                                <td colspan="3" align="right" style="padding:3px 9px"><strong>Grand Total</strong></td>
+                                <td align="right" style="padding:3px 9px">
+                                    <strong>
+                                            <span class="m_-5910052104975220098m_-1298699314059124120price">
+                                                TK. &nbsp;45354
+                                            </span>
+                                    </strong>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <table cellspacing="0" cellpadding="0" border="0" style="margin-top: 15px;" class="table">
+                        <thead>
+                        <tr>
+                            <th align="left" width="325" bgcolor="#EAEAEA"
+                                style="font-size:13px;padding:5px 9px 6px 9px;line-height:1em; border: 1px solid #dddddd;">
+                                Billing Information
+                            </th>
+                            <th width="10" style="border-top: none;"></th>
+                            <th align="left" width="325" bgcolor="#EAEAEA"
+                                style="font-size:13px;padding:5px 9px 6px 9px;line-height:1em; border: 1px solid #dddddd;">
+                                Delivery Information
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td valign="top"
+                                style="font-size:12px;padding:7px 9px 9px 9px;border-left:1px solid #dddddd;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd">
+                                billing_name &nbsp;<br>
+                                billing_address<br>
+                                T: contact_no&nbsp;
+                            </td>
+                            <td style="border: none;">&nbsp;</td>
+                            <td valign="top"
+                                style="font-size:12px;padding:7px 9px 9px 9px;border-left:1px solid #dddddd;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd">
+                                delivery_info
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table cellspacing="0" cellpadding="0" border="0" style="margin-top: 15px;" class="table">
+                        <thead>
+                        <tr>
+                            <th align="left" width="325" bgcolor="#EAEAEA"
+                                style="font-size:13px;padding:5px 9px 6px 9px;line-height:1em; border: 1px solid #dddddd;">
+                                Payment Method
+                            </th>
+                            <th width="10" style="border-top: none;"></th>
+                            <th align="left" width="325" bgcolor="#EAEAEA"
+                                style="font-size:13px;padding:5px 9px 6px 9px;line-height:1em; border: 1px solid #dddddd;">
+                                Any Question?
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td valign="top"
+                                style="font-size:12px;padding:7px 9px 9px 9px;border-left:1px solid #dddddd;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd">
+                                <p><strong>payment_method</strong></p>
+                            </td>
+                            <td style="border: none;">&nbsp;</td>
+                            <td valign="top"
+                                style="font-size:12px;padding:7px 9px 9px 9px;border-left:1px solid #dddddd;border-bottom:1px solid #dddddd;border-right:1px solid #dddddd">
+                                <p>Telephone +88 0960 444 2121</p>
+                                <p>Email <a href="mailto:ecom@ryansplus.com" target="_blank">ecom@ryansplus.com</a></p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <p style="font-size:12px;line-height:16px;margin:0;color:#000000; margin-top: 15px;">
+                        <a href="https://ryanscomputers.com/payment" target="_blank"
+                           data-saferedirecturl="https://www.google.com/url?q=https://ryanscomputers.com/payment&amp;source=gmail&amp;ust=1556090436609000&amp;usg=AFQjCNHe7SkxcWg7XMsQFDvstGFVzxuvtg">Payment
+                            Options</a>&nbsp;|&nbsp;
+                        <a href="https://ryanscomputers.com/terms" target="_blank"
+                           data-saferedirecturl="https://www.google.com/url?q=https://ryanscomputers.com/terms&amp;source=gmail&amp;ust=1556090436610000&amp;usg=AFQjCNGYMo0tVXtmGMzm-3MpVcjWoPrRQA">Terms
+                            &amp; Conditions</a>&nbsp;|&nbsp;
+                        <a href="https://ryanscomputers.com/return" target="_blank"
+                           data-saferedirecturl="https://www.google.com/url?q=https://ryanscomputers.com/return&amp;source=gmail&amp;ust=1556090436610000&amp;usg=AFQjCNErZQx0BsRixrBf25cvnN3BpYyYdw">Return
+                            and Replacement</a>&nbsp;|&nbsp;
+                        <a href="https://ryanscomputers.com/privacy" target="_blank"
+                           data-saferedirecturl="https://www.google.com/url?q=https://ryanscomputers.com/privacy&amp;source=gmail&amp;ust=1556090436610000&amp;usg=AFQjCNGnrS4Gj3LkmJXX7CLOIRQ3W7O8ag">Privacy
+                            Policy</a>
+                    </p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div> -->
+</div>
+</body>
+</html>
